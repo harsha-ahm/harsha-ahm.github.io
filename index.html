@@ -12,9 +12,7 @@
 
     <style>
 
-        /* ================================
-           GLOBAL SETTINGS
-        ================================= */
+        /* GLOBAL SETTINGS */
 
         :root {
             --navy: #142b44;
@@ -54,9 +52,7 @@
             padding: 0 28px;
         }
 
-        /* ================================
-           NAVIGATION
-        ================================= */
+        /* NAVIGATION */
 
         header {
             position: sticky;
@@ -99,17 +95,12 @@
             transition: color .2s;
         }
 
-        .nav-links a:hover {
-            color: var(--blue);
-        }
-
+        .nav-links a:hover,
         .nav-links .resume-nav {
             color: var(--blue);
         }
 
-        /* ================================
-           HERO SECTION
-        ================================= */
+        /* HERO */
 
         .hero {
             padding: 125px 0 135px;
@@ -145,9 +136,7 @@
             margin-bottom: 34px;
         }
 
-        /* ================================
-           BUTTONS
-        ================================= */
+        /* BUTTONS */
 
         .buttons {
             display: flex;
@@ -186,9 +175,7 @@
             transform: translateY(-2px);
         }
 
-        /* ================================
-           GENERAL SECTIONS
-        ================================= */
+        /* GENERAL SECTIONS */
 
         section {
             padding: 95px 0;
@@ -212,9 +199,7 @@
             margin-bottom: 25px;
         }
 
-        /* ================================
-           SKILLS SECTION
-        ================================= */
+        /* SKILLS */
 
         .skills-grid {
             display: grid;
@@ -246,9 +231,7 @@
             font-size: 14px;
         }
 
-        /* ================================
-           PROJECTS SECTION
-        ================================= */
+        /* PROJECTS */
 
         .projects-grid {
             display: grid;
@@ -292,6 +275,10 @@
             flex-grow: 1;
         }
 
+        .project-tags {
+            margin-top: auto;
+        }
+
         .project-tag {
             display: inline-block;
             background: var(--light);
@@ -310,15 +297,14 @@
             color: var(--blue);
             font-size: 14px;
             font-weight: 700;
+            align-self: flex-start;
         }
 
         .project-link:hover {
             text-decoration: underline;
         }
 
-        /* ================================
-           CONTACT SECTION
-        ================================= */
+        /* CONTACT */
 
         .contact {
             text-align: center;
@@ -348,15 +334,14 @@
         .contact-email a {
             color: var(--blue);
             font-weight: 600;
+            overflow-wrap: anywhere;
         }
 
         .contact-email a:hover {
             text-decoration: underline;
         }
 
-        /* ================================
-           FOOTER
-        ================================= */
+        /* FOOTER */
 
         footer {
             border-top: 1px solid var(--border);
@@ -366,9 +351,7 @@
             font-size: 13px;
         }
 
-        /* ================================
-           TABLET RESPONSIVENESS
-        ================================= */
+        /* TABLET */
 
         @media (max-width: 850px) {
 
@@ -383,9 +366,7 @@
 
         }
 
-        /* ================================
-           MOBILE RESPONSIVENESS
-        ================================= */
+        /* MOBILE */
 
         @media (max-width: 600px) {
 
@@ -448,6 +429,7 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
+
             html {
                 scroll-behavior: auto;
             }
@@ -455,6 +437,7 @@
             *, *::before, *::after {
                 transition: none !important;
             }
+
         }
 
     </style>
@@ -463,9 +446,7 @@
 
 <body>
 
-    <!-- ================================
-         NAVIGATION
-    ================================= -->
+    <!-- NAVIGATION -->
 
     <header>
 
@@ -500,9 +481,7 @@
 
     <main>
 
-        <!-- ================================
-             HERO SECTION
-        ================================= -->
+        <!-- HERO -->
 
         <div class="hero container" id="home">
 
@@ -541,9 +520,7 @@
 
         </div>
 
-        <!-- ================================
-             ABOUT SECTION
-        ================================= -->
+        <!-- ABOUT -->
 
         <section id="about" class="section-light">
 
@@ -557,7 +534,7 @@
 
                 <p class="section-description">
                     I'm an undergraduate student at Rutgers University,
-                    majoring in Finance and Business Analytics &
+                    majoring in Finance and Business Analytics &amp;
                     Information Technology. My interests lie at the
                     intersection of business strategy, analytical
                     problem-solving, and management consulting.
@@ -577,9 +554,7 @@
 
         </section>
 
-        <!-- ================================
-             SKILLS SECTION
-        ================================= -->
+        <!-- SKILLS -->
 
         <section id="skills" class="section-light">
 
@@ -588,7 +563,7 @@
                 <p class="eyebrow">02 / Expertise</p>
 
                 <h2 class="section-title">
-                    Skills & Capabilities
+                    Skills &amp; Capabilities
                 </h2>
 
                 <p class="section-description">
@@ -632,7 +607,7 @@
                     </div>
 
                     <div class="skill-card">
-                        <h3>Research & Communication</h3>
+                        <h3>Research &amp; Communication</h3>
                         <p>
                             Research synthesis, professional
                             presentations, and written communication.
@@ -653,9 +628,7 @@
 
         </section>
 
-        <!-- ================================
-             PROJECTS SECTION
-        ================================= -->
+        <!-- PROJECTS -->
 
         <section id="projects">
 
@@ -675,7 +648,7 @@
 
                 <div class="projects-grid">
 
-                    <!-- PROJECT 01 -->
+                    <!-- PROJECT 01: VERIZON -->
 
                     <article class="project-card">
 
@@ -683,26 +656,37 @@
                             PROJECT 01
                         </span>
 
-                        <h3>Verizon Case Competition</h3>
+                        <h3>
+                            Verizon x Rutgers Case Competition
+                        </h3>
 
                         <p>
-                            Collaborated with a team to develop and
-                            present a strategic solution during a
-                            competitive business case competition.
-                            Contributed to the team's approach,
-                            executive summary, and presentation
-                            preparation, ultimately reaching the finals.
+                            Developed RU360's UniView concept as part
+                            of a finalist team in the Verizon x Rutgers
+                            Business School Case Competition. Proposed
+                            a 5G-powered smart-campus platform integrating
+                            real-time parking visibility, IoT occupancy
+                            tracking, and predictive analytics.
+                            Contributed to the strategic proposal,
+                            market analysis, and phased implementation plan.
                         </p>
 
-                        <div>
+                        <div class="project-tags">
                             <span class="project-tag">Strategy</span>
                             <span class="project-tag">Consulting</span>
-                            <span class="project-tag">Teamwork</span>
+                            <span class="project-tag">5G &amp; IoT</span>
                         </div>
+
+                        <a href="RU360.pdf"
+                           class="project-link"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            View Project Proposal &rarr;
+                        </a>
 
                     </article>
 
-                    <!-- PROJECT 02 -->
+                    <!-- PROJECT 02: RUAIR -->
 
                     <article class="project-card">
 
@@ -710,17 +694,20 @@
                             PROJECT 02
                         </span>
 
-                        <h3>RUAIR Website Development</h3>
+                        <h3>
+                            RUAIR Website Development
+                        </h3>
 
                         <p>
                             Worked on the development and design of
                             a student organization website, focusing
                             on usability, responsive layouts,
                             navigation, and presenting information
-                            in an accessible and visually engaging format.
+                            in an accessible and visually engaging
+                            format.
                         </p>
 
-                        <div>
+                        <div class="project-tags">
                             <span class="project-tag">Web Design</span>
                             <span class="project-tag">Digital Strategy</span>
                         </div>
@@ -734,7 +721,7 @@
 
                     </article>
 
-                    <!-- PROJECT 03 -->
+                    <!-- PROJECT 03: FINANCIAL LITERACY -->
 
                     <article class="project-card">
 
@@ -742,21 +729,33 @@
                             PROJECT 03
                         </span>
 
-                        <h3>Financial Literacy Research</h3>
+                        <h3>
+                            Financial Literacy Research
+                        </h3>
 
                         <p>
                             Co-authored and presented research focused
-                            on financial literacy, contributing to
-                            discussions surrounding financial education
-                            and its broader implications. Presented
-                            findings to academic and professional audiences.
+                            on financial literacy and economic equality,
+                            exploring the role of meaningful financial
+                            education in improving long-term financial
+                            security. Contributed to discussions
+                            surrounding financial education and
+                            presented findings to academic and
+                            professional audiences.
                         </p>
 
-                        <div>
+                        <div class="project-tags">
                             <span class="project-tag">Research</span>
                             <span class="project-tag">Finance</span>
-                            <span class="project-tag">Presentation</span>
+                            <span class="project-tag">Financial Literacy</span>
                         </div>
+
+                        <a href="https://teen-thinktank.medium.com/achieving-economic-equality-in-america-a-path-toward-financial-security-through-meaningful-and-94897a55504b"
+                           class="project-link"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Read Published Article &rarr;
+                        </a>
 
                     </article>
 
@@ -766,9 +765,7 @@
 
         </section>
 
-        <!-- ================================
-             CONTACT SECTION
-        ================================= -->
+        <!-- CONTACT -->
 
         <section id="contact" class="section-light contact">
 
@@ -789,14 +786,10 @@
 
                 <div class="contact-buttons">
 
-                    <!-- EMAIL BUTTON -->
-
                     <a href="mailto:harsha.ahmed@rutgers.edu"
                        class="btn btn-primary">
                         Email Me &rarr;
                     </a>
-
-                    <!-- LINKEDIN BUTTON -->
 
                     <a href="https://www.linkedin.com/in/harshaahmed/"
                        class="btn btn-secondary"
@@ -804,8 +797,6 @@
                        rel="noopener noreferrer">
                         LinkedIn &nearr;
                     </a>
-
-                    <!-- GITHUB BUTTON -->
 
                     <a href="https://github.com/harsha-ahm"
                        class="btn btn-secondary"
@@ -829,17 +820,13 @@
 
     </main>
 
-    <!-- ================================
-         FOOTER
-    ================================= -->
+    <!-- FOOTER -->
 
     <footer>
 
         <div class="container">
-
             &copy; 2026 Harsha Ahmed.
             Built with GitHub Pages.
-
         </div>
 
     </footer>
