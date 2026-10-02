@@ -1,13 +1,644 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsha Ahmed | Portfolio</title>
+    <meta name="description" content="The personal portfolio of Harsha Ahmed, a Finance and Business Analytics student at Rutgers University.">
+    <title>Harsha Ahmed | Personal Portfolio</title>
+
+    <style>
+        /* GLOBAL SETTINGS */
+
+        :root {
+            --navy: #142b44;
+            --blue: #3478b9;
+            --text: #51647a;
+            --light: #f4f7fb;
+            --border: #e4ebf2;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--navy);
+            background: var(--white);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: auto;
+            padding: 0 28px;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.97);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        nav {
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            transition: color .2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 125px 0 135px;
+        }
+
+        .eyebrow {
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            letter-spacing: -2.5px;
+            line-height: 1.12;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: clamp(21px, 3vw, 29px);
+            color: var(--text);
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+
+        .hero-description {
+            max-width: 670px;
+            color: var(--text);
+            font-size: 17px;
+            margin-bottom: 34px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 23px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all .2s;
+        }
+
+        .btn-primary {
+            background: var(--navy);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--blue);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid #cbd5e1;
+            color: var(--navy);
+        }
+
+        .btn-secondary:hover {
+            background: var(--light);
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 95px 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-title {
+            font-size: clamp(29px, 4vw, 39px);
+            letter-spacing: -1px;
+            margin-bottom: 25px;
+            line-height: 1.25;
+        }
+
+        .section-description {
+            max-width: 760px;
+            font-size: 16px;
+            color: var(--text);
+            margin-bottom: 25px;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(20,43,68,.07);
+        }
+
+        .skill-card h3 {
+            font-size: 17px;
+            margin-bottom: 9px;
+        }
+
+        .skill-card p {
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 35px rgba(20,43,68,.08);
+        }
+
+        .project-number {
+            font-size: 12px;
+            color: var(--blue);
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            font-size: 21px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: var(--text);
+            margin-bottom: 22px;
+            flex-grow: 1;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: var(--light);
+            color: var(--blue);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-right: 5px;
+            margin-bottom: 7px;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact .section-description {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 0;
+            text-align: center;
+            color: var(--text);
+            font-size: 13px;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+
+        @media (max-width: 850px) {
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                padding: 90px 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                flex-direction: column;
+                padding: 17px 0;
+                gap: 12px;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 16px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 75px 0 85px;
+            }
+
+            h1 {
+                letter-spacing: -1px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 22px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Harsha Ahmed</h1>
-    <p>Welcome to my personal portfolio website.</p>
+
+    <!-- NAVIGATION -->
+
+    <header>
+        <nav class="container">
+
+            <a href="#home" class="logo" aria-label="Harsha Ahmed, home">
+                HA<span>.</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+
+        <div class="hero container" id="home">
+
+            <p class="eyebrow">Welcome to my portfolio</p>
+
+            <h1>Hi, I'm Harsha Ahmed.</h1>
+
+            <h2>Finance. Analytics. Strategy.</h2>
+
+            <p class="hero-description">
+                A Finance and Business Analytics student at Rutgers University
+                passionate about combining strategic thinking, analytical
+                problem-solving, and creative approaches to deliver meaningful
+                business impact.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn btn-primary">
+                    Explore My Work &rarr;
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Get in Touch
+                </a>
+            </div>
+
+        </div>
+
+        <!-- ABOUT -->
+
+        <section id="about" class="section-light">
+
+            <div class="container">
+
+                <p class="eyebrow">01 / About Me</p>
+
+                <h2 class="section-title">A little about me.</h2>
+
+                <p class="section-description">
+                    I'm an undergraduate student at Rutgers University,
+                    majoring in Finance and Business Analytics & Information
+                    Technology. My interests lie at the intersection of
+                    business strategy, analytical problem-solving, and
+                    management consulting.
+                </p>
+
+                <p class="section-description">
+                    Through case competitions, research, and student-led
+                    initiatives, I've had opportunities to work with
+                    diverse teams, approach complex challenges creatively,
+                    and translate ideas into actionable solutions.
+                    I enjoy work that combines structured analysis with
+                    collaboration and the opportunity to create
+                    meaningful, lasting impact.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- SKILLS -->
+
+        <section id="skills" class="section-light">
+
+            <div class="container">
+
+                <p class="eyebrow">02 / Expertise</p>
+
+                <h2 class="section-title">Skills & Capabilities</h2>
+
+                <p class="section-description">
+                    A combination of analytical, strategic, and
+                    interpersonal skills developed through academic
+                    work and extracurricular experiences.
+                </p>
+
+                <div class="skills-grid">
+
+                    <div class="skill-card">
+                        <h3>Financial Analysis</h3>
+                        <p>Financial research, business fundamentals, and analytical evaluation.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Business Analytics</h3>
+                        <p>Data interpretation, quantitative reasoning, and evidence-based decision-making.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Strategic Thinking</h3>
+                        <p>Structured problem-solving, business strategy, and case analysis.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Project Management</h3>
+                        <p>Team coordination, planning, prioritization, and managing deliverables.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Research & Communication</h3>
+                        <p>Research synthesis, professional presentations, and written communication.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Web Development</h3>
+                        <p>Website development, visual design, and digital content organization.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PROJECTS -->
+
+        <section id="projects">
+
+            <div class="container">
+
+                <p class="eyebrow">03 / Selected Work</p>
+
+                <h2 class="section-title">Featured Projects</h2>
+
+                <p class="section-description">
+                    A selection of experiences that reflect my interests
+                    in consulting, research, and creative problem-solving.
+                </p>
+
+                <div class="projects-grid">
+
+                    <!-- PROJECT ONE -->
+
+                    <article class="project-card">
+
+                        <span class="project-number">PROJECT 01</span>
+
+                        <h3>Verizon Case Competition</h3>
+
+                        <p>
+                            Collaborated with a team to develop and present
+                            a strategic solution during a competitive business
+                            case competition. Contributed to the team's
+                            approach, executive summary, and presentation
+                            preparation, ultimately reaching the finals.
+                        </p>
+
+                        <div>
+                            <span class="project-tag">Strategy</span>
+                            <span class="project-tag">Consulting</span>
+                            <span class="project-tag">Teamwork</span>
+                        </div>
+
+                    </article>
+
+                    <!-- PROJECT TWO -->
+
+                    <article class="project-card">
+
+                        <span class="project-number">PROJECT 02</span>
+
+                        <h3>RUAIR Website Development</h3>
+
+                        <p>
+                            Worked on the development and design of a
+                            student organization website, focusing on
+                            usability, responsive layouts, navigation,
+                            and presenting information in an accessible
+                            and visually engaging format.
+                        </p>
+
+                        <div>
+                            <span class="project-tag">Web Design</span>
+                            <span class="project-tag">Digital Strategy</span>
+                        </div>
+
+                        <a class="project-link"
+                           href="https://ruair.org/"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Visit Website &rarr;
+                        </a>
+
+                    </article>
+
+                    <!-- PROJECT THREE -->
+
+                    <article class="project-card">
+
+                        <span class="project-number">PROJECT 03</span>
+
+                        <h3>Financial Literacy Research</h3>
+
+                        <p>
+                            Co-authored and presented research focused
+                            on financial literacy, contributing to
+                            discussions surrounding financial education
+                            and its broader implications. Presented
+                            findings to academic and professional audiences.
+                        </p>
+
+                        <div>
+                            <span class="project-tag">Research</span>
+                            <span class="project-tag">Finance</span>
+                            <span class="project-tag">Presentation</span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACT -->
+
+        <section id="contact" class="section-light contact">
+
+            <div class="container">
+
+                <p class="eyebrow">04 / Contact</p>
+
+                <h2 class="section-title">Let's Connect.</h2>
+
+                <p class="section-description">
+                    I'm always interested in connecting with people
+                    who share an interest in business, consulting,
+                    finance, and creative problem-solving.
+                </p>
+
+                <a href="https://github.com/harsha-ahm"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn btn-primary">
+                    Visit My GitHub &rarr;
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container">
+            &copy; 2026 Harsha Ahmed. Built with GitHub Pages.
+        </div>
+    </footer>
+
 </body>
 </html>
