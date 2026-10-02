@@ -5,11 +5,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The personal portfolio of Harsha Ahmed, a Finance and Business Analytics student at Rutgers University.">
+
+    <meta name="description" content="Personal portfolio of Harsha Ahmed, a Finance and Business Analytics student at Rutgers University.">
+
     <title>Harsha Ahmed | Personal Portfolio</title>
 
     <style>
-        /* GLOBAL SETTINGS */
+
+        /* ================================
+           GLOBAL SETTINGS
+        ================================= */
 
         :root {
             --navy: #142b44;
@@ -28,7 +33,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 90px;
+            scroll-padding-top: 110px;
         }
 
         body {
@@ -49,7 +54,9 @@
             padding: 0 28px;
         }
 
-        /* NAVIGATION */
+        /* ================================
+           NAVIGATION
+        ================================= */
 
         header {
             position: sticky;
@@ -57,6 +64,7 @@
             background: rgba(255,255,255,0.97);
             border-bottom: 1px solid var(--border);
             z-index: 100;
+            backdrop-filter: blur(12px);
         }
 
         nav {
@@ -79,7 +87,8 @@
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            align-items: center;
+            gap: 30px;
             flex-wrap: wrap;
         }
 
@@ -94,7 +103,13 @@
             color: var(--blue);
         }
 
-        /* HERO */
+        .nav-links .resume-nav {
+            color: var(--blue);
+        }
+
+        /* ================================
+           HERO SECTION
+        ================================= */
 
         .hero {
             padding: 125px 0 135px;
@@ -130,6 +145,10 @@
             margin-bottom: 34px;
         }
 
+        /* ================================
+           BUTTONS
+        ================================= */
+
         .buttons {
             display: flex;
             gap: 14px;
@@ -143,6 +162,7 @@
             font-size: 14px;
             font-weight: 700;
             transition: all .2s;
+            text-align: center;
         }
 
         .btn-primary {
@@ -158,13 +178,17 @@
         .btn-secondary {
             border: 1px solid #cbd5e1;
             color: var(--navy);
+            background: transparent;
         }
 
         .btn-secondary:hover {
-            background: var(--light);
+            background: #e9eff6;
+            transform: translateY(-2px);
         }
 
-        /* SECTIONS */
+        /* ================================
+           GENERAL SECTIONS
+        ================================= */
 
         section {
             padding: 95px 0;
@@ -188,7 +212,9 @@
             margin-bottom: 25px;
         }
 
-        /* SKILLS */
+        /* ================================
+           SKILLS SECTION
+        ================================= */
 
         .skills-grid {
             display: grid;
@@ -220,7 +246,9 @@
             font-size: 14px;
         }
 
-        /* PROJECTS */
+        /* ================================
+           PROJECTS SECTION
+        ================================= */
 
         .projects-grid {
             display: grid;
@@ -288,7 +316,9 @@
             text-decoration: underline;
         }
 
-        /* CONTACT */
+        /* ================================
+           CONTACT SECTION
+        ================================= */
 
         .contact {
             text-align: center;
@@ -299,7 +329,34 @@
             margin-right: auto;
         }
 
-        /* FOOTER */
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-email {
+            display: block;
+            margin-top: 25px;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .contact-email a {
+            color: var(--blue);
+            font-weight: 600;
+        }
+
+        .contact-email a:hover {
+            text-decoration: underline;
+        }
+
+        /* ================================
+           FOOTER
+        ================================= */
 
         footer {
             border-top: 1px solid var(--border);
@@ -309,7 +366,9 @@
             font-size: 13px;
         }
 
-        /* MOBILE RESPONSIVENESS */
+        /* ================================
+           TABLET RESPONSIVENESS
+        ================================= */
 
         @media (max-width: 850px) {
 
@@ -321,9 +380,18 @@
             .hero {
                 padding: 90px 0;
             }
+
         }
 
+        /* ================================
+           MOBILE RESPONSIVENESS
+        ================================= */
+
         @media (max-width: 600px) {
+
+            html {
+                scroll-padding-top: 140px;
+            }
 
             nav {
                 flex-direction: column;
@@ -360,57 +428,101 @@
             .container {
                 padding: 0 22px;
             }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .contact-buttons .btn {
+                width: 100%;
+            }
+
         }
+
+        /* ACCESSIBILITY */
+
+        a:focus-visible {
+            outline: 3px solid var(--blue);
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *, *::before, *::after {
+                transition: none !important;
+            }
+        }
+
     </style>
+
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- ================================
+         NAVIGATION
+    ================================= -->
 
     <header>
+
         <nav class="container">
 
             <a href="#home" class="logo" aria-label="Harsha Ahmed, home">
                 HA<span>.</span>
             </a>
-            
-    <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="Harsha_Ahmed_Resume.pdf"
-           target="_blank"
-           rel="noopener noreferrer">
-        Resume ↗
-        </a>
-    </div>
 
+            <div class="nav-links">
+
+                <a href="#about">About</a>
+
+                <a href="#skills">Skills</a>
+
+                <a href="#projects">Projects</a>
+
+                <a href="#contact">Contact</a>
+
+                <a href="Harsha_Ahmed_Resume.pdf"
+                   class="resume-nav"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Resume &nearr;
+                </a>
+
+            </div>
 
         </nav>
+
     </header>
 
     <main>
 
-        <!-- HERO -->
+        <!-- ================================
+             HERO SECTION
+        ================================= -->
 
         <div class="hero container" id="home">
 
-            <p class="eyebrow">Welcome to my portfolio</p>
+            <p class="eyebrow">
+                Welcome to my portfolio
+            </p>
 
             <h1>Hi, I'm Harsha Ahmed.</h1>
 
             <h2>Finance. Analytics. Strategy.</h2>
 
             <p class="hero-description">
-                A Finance and Business Analytics student at Rutgers University
-                passionate about combining strategic thinking, analytical
-                problem-solving, and creative approaches to deliver meaningful
-                business impact.
+                A Finance and Business Analytics student at Rutgers
+                University passionate about combining strategic thinking,
+                analytical problem-solving, and creative approaches
+                to deliver meaningful business impact.
             </p>
 
             <div class="buttons">
+
                 <a href="#projects" class="btn btn-primary">
                     Explore My Work &rarr;
                 </a>
@@ -418,11 +530,20 @@
                 <a href="#contact" class="btn btn-secondary">
                     Get in Touch
                 </a>
+
+                <a href="Harsha_Ahmed_Resume.pdf"
+                   class="btn btn-secondary"
+                   download="Harsha_Ahmed_Resume.pdf">
+                    Download Resume &darr;
+                </a>
+
             </div>
 
         </div>
 
-        <!-- ABOUT -->
+        <!-- ================================
+             ABOUT SECTION
+        ================================= -->
 
         <section id="about" class="section-light">
 
@@ -430,14 +551,16 @@
 
                 <p class="eyebrow">01 / About Me</p>
 
-                <h2 class="section-title">A little about me.</h2>
+                <h2 class="section-title">
+                    A little about me.
+                </h2>
 
                 <p class="section-description">
                     I'm an undergraduate student at Rutgers University,
-                    majoring in Finance and Business Analytics & Information
-                    Technology. My interests lie at the intersection of
-                    business strategy, analytical problem-solving, and
-                    management consulting.
+                    majoring in Finance and Business Analytics &
+                    Information Technology. My interests lie at the
+                    intersection of business strategy, analytical
+                    problem-solving, and management consulting.
                 </p>
 
                 <p class="section-description">
@@ -454,7 +577,9 @@
 
         </section>
 
-        <!-- SKILLS -->
+        <!-- ================================
+             SKILLS SECTION
+        ================================= -->
 
         <section id="skills" class="section-light">
 
@@ -462,7 +587,9 @@
 
                 <p class="eyebrow">02 / Expertise</p>
 
-                <h2 class="section-title">Skills & Capabilities</h2>
+                <h2 class="section-title">
+                    Skills & Capabilities
+                </h2>
 
                 <p class="section-description">
                     A combination of analytical, strategic, and
@@ -474,32 +601,50 @@
 
                     <div class="skill-card">
                         <h3>Financial Analysis</h3>
-                        <p>Financial research, business fundamentals, and analytical evaluation.</p>
+                        <p>
+                            Financial research, business fundamentals,
+                            and analytical evaluation.
+                        </p>
                     </div>
 
                     <div class="skill-card">
                         <h3>Business Analytics</h3>
-                        <p>Data interpretation, quantitative reasoning, and evidence-based decision-making.</p>
+                        <p>
+                            Data interpretation, quantitative reasoning,
+                            and evidence-based decision-making.
+                        </p>
                     </div>
 
                     <div class="skill-card">
                         <h3>Strategic Thinking</h3>
-                        <p>Structured problem-solving, business strategy, and case analysis.</p>
+                        <p>
+                            Structured problem-solving, business
+                            strategy, and case analysis.
+                        </p>
                     </div>
 
                     <div class="skill-card">
                         <h3>Project Management</h3>
-                        <p>Team coordination, planning, prioritization, and managing deliverables.</p>
+                        <p>
+                            Team coordination, planning, prioritization,
+                            and managing deliverables.
+                        </p>
                     </div>
 
                     <div class="skill-card">
                         <h3>Research & Communication</h3>
-                        <p>Research synthesis, professional presentations, and written communication.</p>
+                        <p>
+                            Research synthesis, professional
+                            presentations, and written communication.
+                        </p>
                     </div>
 
                     <div class="skill-card">
                         <h3>Web Development</h3>
-                        <p>Website development, visual design, and digital content organization.</p>
+                        <p>
+                            Website development, visual design,
+                            and digital content organization.
+                        </p>
                     </div>
 
                 </div>
@@ -508,7 +653,9 @@
 
         </section>
 
-        <!-- PROJECTS -->
+        <!-- ================================
+             PROJECTS SECTION
+        ================================= -->
 
         <section id="projects">
 
@@ -516,28 +663,34 @@
 
                 <p class="eyebrow">03 / Selected Work</p>
 
-                <h2 class="section-title">Featured Projects</h2>
+                <h2 class="section-title">
+                    Featured Projects
+                </h2>
 
                 <p class="section-description">
-                    A selection of experiences that reflect my interests
-                    in consulting, research, and creative problem-solving.
+                    A selection of experiences that reflect my
+                    interests in consulting, research, and
+                    creative problem-solving.
                 </p>
 
                 <div class="projects-grid">
 
-                    <!-- PROJECT ONE -->
+                    <!-- PROJECT 01 -->
 
                     <article class="project-card">
 
-                        <span class="project-number">PROJECT 01</span>
+                        <span class="project-number">
+                            PROJECT 01
+                        </span>
 
                         <h3>Verizon Case Competition</h3>
 
                         <p>
-                            Collaborated with a team to develop and present
-                            a strategic solution during a competitive business
-                            case competition. Contributed to the team's
-                            approach, executive summary, and presentation
+                            Collaborated with a team to develop and
+                            present a strategic solution during a
+                            competitive business case competition.
+                            Contributed to the team's approach,
+                            executive summary, and presentation
                             preparation, ultimately reaching the finals.
                         </p>
 
@@ -549,20 +702,22 @@
 
                     </article>
 
-                    <!-- PROJECT TWO -->
+                    <!-- PROJECT 02 -->
 
                     <article class="project-card">
 
-                        <span class="project-number">PROJECT 02</span>
+                        <span class="project-number">
+                            PROJECT 02
+                        </span>
 
                         <h3>RUAIR Website Development</h3>
 
                         <p>
-                            Worked on the development and design of a
-                            student organization website, focusing on
-                            usability, responsive layouts, navigation,
-                            and presenting information in an accessible
-                            and visually engaging format.
+                            Worked on the development and design of
+                            a student organization website, focusing
+                            on usability, responsive layouts,
+                            navigation, and presenting information
+                            in an accessible and visually engaging format.
                         </p>
 
                         <div>
@@ -570,8 +725,8 @@
                             <span class="project-tag">Digital Strategy</span>
                         </div>
 
-                        <a class="project-link"
-                           href="https://ruair.org/"
+                        <a href="https://ruair.org/"
+                           class="project-link"
                            target="_blank"
                            rel="noopener noreferrer">
                             Visit Website &rarr;
@@ -579,11 +734,13 @@
 
                     </article>
 
-                    <!-- PROJECT THREE -->
+                    <!-- PROJECT 03 -->
 
                     <article class="project-card">
 
-                        <span class="project-number">PROJECT 03</span>
+                        <span class="project-number">
+                            PROJECT 03
+                        </span>
 
                         <h3>Financial Literacy Research</h3>
 
@@ -609,51 +766,62 @@
 
         </section>
 
-           <!-- CONTACT -->
+        <!-- ================================
+             CONTACT SECTION
+        ================================= -->
 
-    <section id="contact" class="section-light contact">
+        <section id="contact" class="section-light contact">
 
-        <div class="container">
+            <div class="container">
 
-            <p class="eyebrow">04 / Contact</p>
+                <p class="eyebrow">04 / Contact</p>
 
-            <h2 class="section-title">Let's Connect.</h2>
+                <h2 class="section-title">
+                    Let's Connect.
+                </h2>
 
-            <p class="section-description">
-                I'm always interested in connecting with people
-                who share an interest in business, consulting,
-                finance, and creative problem-solving.
-                Feel free to reach out!
-            </p>
+                <p class="section-description">
+                    I'm always interested in connecting with people
+                    who share an interest in business, consulting,
+                    finance, and creative problem-solving.
+                    Feel free to reach out!
+                </p>
 
-            <div class="buttons" style="justify-content: center;">
+                <div class="contact-buttons">
 
-                <!-- EMAIL -->
+                    <!-- EMAIL BUTTON -->
 
-                <a href="mailto:harsha.ahmed@rutgers.edu"
-                   class="btn btn-primary">
-                    Email Me &rarr;
-                </a>
+                    <a href="mailto:harsha.ahmed@rutgers.edu"
+                       class="btn btn-primary">
+                        Email Me &rarr;
+                    </a>
 
-                <!-- LINKEDIN -->
+                    <!-- LINKEDIN BUTTON -->
 
-                <a href="https://www.linkedin.com/in/harshaahmed/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="btn btn-secondary">
-                    LinkedIn &nearr;
-                </a>
+                    <a href="https://www.linkedin.com/in/harshaahmed/"
+                       class="btn btn-secondary"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        LinkedIn &nearr;
+                    </a>
 
-                <!-- GITHUB -->
+                    <!-- GITHUB BUTTON -->
 
-                <a href="https://github.com/harsha-ahm"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="btn btn-secondary">
-                GitHub &nearr;
-                </a>
+                    <a href="https://github.com/harsha-ahm"
+                       class="btn btn-secondary"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        GitHub &nearr;
+                    </a>
 
-            </div>
+                </div>
+
+                <p class="contact-email">
+                    Or reach me directly at
+                    <a href="mailto:harsha.ahmed@rutgers.edu">
+                        harsha.ahmed@rutgers.edu
+                    </a>
+                </p>
 
             </div>
 
@@ -661,12 +829,19 @@
 
     </main>
 
-    <!-- FOOTER -->
+    <!-- ================================
+         FOOTER
+    ================================= -->
 
     <footer>
+
         <div class="container">
-            &copy; 2026 Harsha Ahmed. Built with GitHub Pages.
+
+            &copy; 2026 Harsha Ahmed.
+            Built with GitHub Pages.
+
         </div>
+
     </footer>
 
 </body>
